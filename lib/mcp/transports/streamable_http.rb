@@ -343,7 +343,7 @@ module FastMcp
           # Return 202 Accepted for notifications with session ID
           session_id = get_or_create_session(request)
           headers = { 'MCP-Session-Id' => session_id }
-          [202, headers, ['']]
+          [204, headers, ['']]
         else
           # Return JSON response or potentially SSE stream
           handle_json_rpc_response(response, request)
