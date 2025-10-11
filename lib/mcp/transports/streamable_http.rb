@@ -342,7 +342,7 @@ module FastMcp
         if response.nil? || response.empty?
           # Return 202 Accepted for notifications with session ID
           session_id = get_or_create_session(request)
-          headers = { 'Content-Type' => JSON_CONTENT_TYPE, 'MCP-Session-Id' => session_id }
+          headers = { 'MCP-Session-Id' => session_id }
           [202, headers, ['']]
         else
           # Return JSON response or potentially SSE stream
