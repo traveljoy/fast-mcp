@@ -136,7 +136,7 @@ module FastMcp
 
         # Determine response handling
         if response.nil? || response.empty?
-          [202, { 'Content-Type' => JSON_CONTENT_TYPE }, ['']]
+          [202, {}, ['']]
         else
           handle_json_rpc_response(response, request)
         end
